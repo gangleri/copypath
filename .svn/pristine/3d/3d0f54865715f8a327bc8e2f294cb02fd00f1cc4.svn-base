@@ -1,0 +1,34 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {41EB7708-39AD-418A-90A1-5126C5BAFCE0} = s 'CopyPathExt Class'
+		{
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+		}
+	}
+	
+	NoRemove AllFilesystemObjects
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove CopyPathExt = s '{41EB7708-39AD-418A-90A1-5126C5BAFCE0}'
+            }
+        }
+    }
+    NoRemove Drive
+    {
+        NoRemove ShellEx
+        {
+            NoRemove ContextMenuHandlers
+            {
+                ForceRemove CopyPathExt = s '{41EB7708-39AD-418A-90A1-5126C5BAFCE0}'
+            }
+        }
+    }
+}

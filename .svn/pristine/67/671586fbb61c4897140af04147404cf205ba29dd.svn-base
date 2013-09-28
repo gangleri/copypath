@@ -1,0 +1,34 @@
+// CopyPath.idl : IDL source for CopyPath
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (CopyPath.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(87145C87-2230-4A80-A922-21FC3C823A3C),
+	helpstring("ICopyPathExt Interface"),
+	pointer_default(unique)
+]
+interface ICopyPathExt : IUnknown{
+};
+[
+	uuid(453DB888-3B7A-4B72-A6B0-B1C12B06BF6E),
+	version(1.0),
+	helpstring("CopyPath 1.0 Type Library")
+]
+library CopyPathLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(41EB7708-39AD-418A-90A1-5126C5BAFCE0),
+		helpstring("CopyPathExt Class")
+	]
+	coclass CopyPathExt
+	{
+		[default] interface ICopyPathExt;
+	};
+};
